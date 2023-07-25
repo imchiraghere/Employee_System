@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<style></style>
+<html lang="en">
+  <head>
+    <title>Employee Record's</title>
+    <link rel="icon" type="image/png" href="/images/icon2.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <div class="limiter">
+      <div class="container-table100">
+        <div class="wrap-table100">
+          <div class="heading">
+            <img src="/images/emp3.png" width="60" style="margin-top: 10px" />
+            Employee Record's
+            <a href="./empinterface">
+              <img
+                src="/images/add.png"
+                width="50"
+                align="right"
+                style="margin-right: 20px; margin-top: 15px"
+            /></a>
+          </div>
+          <div class="table100">
+            <table>
+              <thead>
+                <tr class="table100-head">
+                  <th class="column1">Employee ID</th>
+                  <th class="column2">First Name</th>
+                  <th class="column3">Last Name</th>
+                  <th class="column4">Gender</th>
+                  <th class="column5">DOB</th>
+                  <th class="column6">Phone No.</th>
+                  <th class="column7">Address</th>
+                  <th class="column8">State</th>
+                  <th class="column9">City</th>
+                  <th class="column10">Picture</th>
+                  <th class="column11">Edit / Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <% data.map((item)=>{ %>
+
+                  <td class="column1"><%=item.empid%></td>
+
+                  <td class="column2"><%=item.emp_firstname%></td>
+
+                  <td class="column3"><%=item.emp_lastname%></td>
+
+                  <td class="column4"><%=item.gender%></td>
+
+                  <td class="column5"><%=item.dob%></td>
+
+                  <td class="column6"><%=item.phoneno%></td>
+
+                  <td class="column7"><%=item.address%></td>
+
+                  <td class="column8"><%=item.state%></td>
+
+                  <td class="column9"><%=item.city%></td>
+
+                  <td class="column10">
+                    <a href="/employee/searchbyidpic?eid=<%=item.empid%>">
+                      <img
+                        class="img"
+                        src="/images/<%=item.picture%>"
+                        width="30"
+                    /></a>
+                  </td>
+                  <td class="column11">
+                    <a
+                      href="/employee/searchbyid?eid=<%=item.empid%>"
+                      style="text-decoration: none"
+                    >
+                      <i class="bi bi-pencil-square"></i>
+                      Edit /
+                      <i class="bi bi-trash-fill"></i>Delete</a
+                    >
+                  </td>
+                </tr>
+                <% })%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

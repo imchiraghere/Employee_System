@@ -1,0 +1,220 @@
+<style>
+  @font-face {
+    font-family: Poppins-Regular;
+    src: url(/stylesheets/Poppins/Poppins-Regular.ttf);
+  }
+  @font-face {
+    font-family: Poppins-Bold;
+    src: url(/stylesheets/poppins/Poppins-Bold.ttf);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+  }
+
+  /*sidebar css*/
+
+  section#sidebar {
+    width: 20%;
+    position: fixed;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        rgba(155, 60, 183, 0.9),
+        rgba(255, 57, 111, 0.9)
+      ),
+      url("/images/dash4.jpeg");
+    animation: dh 10s ease infinite;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 1s ease;
+    font-family: Poppins-Regular;
+    box-shadow: 0 5px 10px #000;
+  }
+  @keyframes dh {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .sidebar-brand {
+    padding-left: 100px;
+    padding-top: 20px;
+  }
+
+  /*main content css*/
+
+  section#main-content {
+    width: 80%;
+    float: right;
+  }
+
+  header {
+    font-family: Poppins-Bold;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    background: linear-gradient(45deg, #e56bdc, #60d49e, #2575fc, #973df7);
+    box-shadow: 0px 10px 20px #000;
+    background-size: 300% 100%;
+    animation: upp 10s ease infinite;
+    width: 100%;
+    height: 85px;
+    position: fixed;
+  }
+  @keyframes upp {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .header-left {
+    float: left;
+    width: 20%;
+    padding: 08px;
+  }
+
+  .header-left.header-profile img {
+    width: 20%;
+    float: left;
+  }
+
+  .search {
+    border-radius: 20px;
+    padding: 8px 12px;
+    border: 2px solid #bbb;
+    transition: width 1s ease;
+    width: 50%;
+  }
+
+  .search:focus {
+    border: 2px solid #fd5a5e;
+    border-radius: 20px;
+    outline: none;
+    width: 95%;
+  }
+
+  .add {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding-left: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    /* height: 50px; */
+    width: 100%;
+    /* margin-left: 30px; */
+  }
+  .add:hover {
+    box-shadow: 0 3px 4px #000;
+  }
+  .add2 {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 30px;
+    padding-left: 15px;
+    width: 100%;
+  }
+  .add2:hover {
+    box-shadow: 0 3px 4px #000;
+  }
+</style>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Dashboard</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-witdh, initial-scale=1.0" />
+
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <section id="sidebar">
+      <div class="sidebar-brand">
+        <div>
+          <a href="/admin/dashboard">
+            <img
+              src="/images/1.gif"
+              style="
+                width: 80px;
+                height: 80px;
+                border-radius: 90px;
+                margin-top: 6px;
+              "
+          /></a>
+        </div>
+      </div>
+      <span
+        style="
+          font-size: 20px;
+          font-weight: bold;
+          padding-left: 95px;
+          padding-top: 20px;
+        "
+        >WelCome</span
+      >
+      <div class="add">
+        <a
+          href="/employee/empinterface"
+          target="ad"
+          style="text-decoration: none; color: black"
+          >Add Employee</a
+        >
+      </div>
+      <div class="add2">
+        <a
+          href="/employee/empdisplay"
+          target="ad"
+          style="text-decoration: none; color: black"
+          >Employee List</a
+        >
+      </div>
+    </section>
+
+    <section id="main-content">
+      <header>
+        <div class="header-left">
+          <h2 class="toggle-btn"><i class="fa fa-bars"></i> Dashboard</h2>
+        </div>
+
+        <div class="header-left header-profile">
+          <img src="/images/emp3.png" style="margin-left: 600px" />
+          <h3 style="margin-left: 500px; padding-top: 20px">LOLO</h3>
+          <a href="/admin/adminlogout" style="margin-left: 600px"
+            ><span>Logout</span></a
+          >
+        </div>
+      </header>
+      <div>
+        <iframe
+          name="ad"
+          frameborder="0"
+          style="width: 100%; height: 100vh; margin-top: 80px"
+        ></iframe>
+      </div>
+    </section>
+  </body>
+</html>

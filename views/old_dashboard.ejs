@@ -1,0 +1,218 @@
+<style>
+  @font-face {
+    font-family: Poppins-Regular;
+    src: url(/stylesheets/Poppins/Poppins-Regular.ttf);
+  }
+  @font-face {
+    font-family: Poppins-Bold;
+    src: url(/stylesheets/poppins/Poppins-Bold.ttf);
+  }
+  .mn {
+    /* background: url("/images/wel.gif");
+    background-size: contain; */
+    background: linear-gradient(45deg, #3defe0, #e56bdc, #e17a47, #efc958);
+    background-size: 300% 100%;
+    animation: mn 10s ease infinite;
+  }
+  @keyframes mn {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .dash {
+    /* content: ""; */
+    background: linear-gradient(
+        45deg,
+        rgba(155, 60, 183, 0.9),
+        rgba(255, 57, 111, 0.9)
+      ),
+      url("/images/dash2.jpeg");
+    animation: dh 10s ease infinite;
+    width: 100px;
+    height: 100vh;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    font-family: Poppins-Regular;
+    box-shadow: 0 2px 5px #000;
+  }
+  @keyframes dh {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .upper {
+    font-family: Poppins-Bold;
+    font-size: 15px;
+    color: rgb(22, 22, 22);
+    /* text-transform: uppercase; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+
+    background: linear-gradient(45deg, #e56bdc, #60d49e, #2575fc, #973df7);
+    position: relative;
+    background-size: 300% 100%;
+    animation: upp 10s ease infinite;
+    box-shadow: 0 2px 5px #000;
+  }
+
+  @keyframes upp {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  /* .upper:hover {
+    background-color: transparent;
+  }
+  .upper:hover:before {
+    opacity: 1;
+  } */
+
+  .add {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 25px;
+    padding-left: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    /* height: 50px; */
+    width: 111%;
+    /* margin-left: 30px; */
+  }
+  .add:hover {
+    box-shadow: 0 3px 4px #000;
+  }
+  .add2 {
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding-left: 20px;
+    width: 111%;
+    /* margin-right: 30px; */
+    /* height: 50px;
+    width: 150px; */
+  }
+  .add2:hover {
+    box-shadow: 0 3px 4px #000;
+  }
+</style>
+<htm>
+  <head>
+    <title>Admin DashBoard</title>
+    <!------- Bootstrap CSS --------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Font Icon CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <div class="mn">
+      <div class="row">
+        <div class="col-md-2 dash">
+          <div>
+            <a href="/admin/dashboard">
+              <img
+                src="/images/1.gif"
+                style="
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 90px;
+                  margin-top: 6px;
+                "
+            /></a>
+          </div>
+          <span style="font-weight: bold; padding-top: 8px">WelCome</span>
+          <div class="add">
+            <a
+              href="/employee/empinterface"
+              target="ad"
+              style="text-decoration: none; color: black"
+              >Add Employee</a
+            >
+          </div>
+          <div class="add2">
+            <a
+              href="/employee/empdisplay"
+              target="ad"
+              style="text-decoration: none; color: black"
+              >Employee List</a
+            >
+          </div>
+        </div>
+        <!-- <div> -->
+        <div class="col-md-10 upper">
+          <span
+            style="
+              font-weight: bold;
+              font-size: 30px;
+              /* justify-content: center; */
+              /* align-items: center; */
+            "
+            >DashBoard</span
+          >
+          <span style="font-weight: bold; font-size: 20px; margin-left: 55%">
+            <img src="/images/emp3.png" width="60" />Admin : Lolo</span
+          >
+          <span
+            ><a
+              href="/admin/adminlogout"
+              style="
+                font-weight: 100;
+                font-size: 18px;
+                text-decoration: none;
+                color: #000;
+                padding-left: 40px;
+              "
+              >LogOut</a
+            ></span
+          >
+        </div>
+        <!-- <div class="col-md-10">
+          <iframe name="ad"></iframe>
+        </div> -->
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"
+  ></script>
+</htm>
